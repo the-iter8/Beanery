@@ -1,38 +1,380 @@
-.App {
+:root {
+  --border-color: #c46744;
+  --skin: #e6dcd2;
+  --border-3: 3px solid var(--border-color);
+  --border-radius: 20px;
+}
+/* Scrollbar CSS  */
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #e6d7d7;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #e6dcd2;
+  border-radius: 40px;
+  border: 2px groove #c46744;
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #e6dcd2;
+}
+a,
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+button {
+  background-color: inherit;
+}
+
+.headingContainer {
   text-align: center;
+  margin: 3em 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.hLine {
+  height: 3px;
+  width: 10vw;
+  background: inherit;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.hLineSub {
+  height: 100%;
+  width: 100%;
+  right: 100%;
+  background-color: black;
+  position: relative;
+  animation: hLine 0.7s ease-out 1s 1 forwards;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes hLine {
+  0% {
+    right: 100%;
+  }
+  100% {
+    right: 0%;
+  }
+}
+/* this */
+.mainHeading {
+  color: black;
+  text-align: center;
+  font-family: "Didact Gothic", sans-serif;
+}
+
+.mBtnContainer {
+  display: flex;
+  width: 25%;
+  margin: 3em auto;
+  justify-content: space-around;
+}
+
+.menuType {
+  text-align: center;
+  background-color: inherit;
+  color: #c59d5f;
+  border: 1px solid gold;
+}
+
+.menuType:hover,
+.menuType:active,
+.menuType:focus {
+  color: white;
+  background-color: #c59d5f;
+  box-shadow: none;
+  border: 1px solid gold;
+}
+
+.mCard {
+  border: none;
+  cursor: pointer;
+  margin: 1em;
+  background-color: inherit;
+
+  max-width: 47%;
+  display: flex;
+  flex-direction: row;
+}
+
+.mImg {
+  height: 9em;
+  min-width: 40%;
+  border-radius: 5px;
+  object-fit: cover;
+  border: 2px solid gold;
+}
+.mTitle {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dotted black;
+}
+
+.mCardBody {
+  position: relative;
+  bottom: 10%;
+}
+
+.mName,
+.mInfo,
+.mPrice {
+  font-size: 110%;
+}
+.mInfo {
+  padding: 0.5em 0.2em;
+  position: relative;
+  text-align: justify;
+}
+.mPrice {
+  margin-bottom: 0;
+  color: #c59d5f;
+}
+
+.mCard:hover .mTooltip {
+  visibility: visible;
+}
+
+.mTooltip {
+  position: absolute;
+  right: 0px;
+  margin: 1em 0;
+
+  text-transform: capitalize;
+  visibility: hidden;
+}
+.mTooltip:hover {
+  transform: scale(1.2);
+}
+
+/* Home page */
+
+.rNavbar,
+.rNBtnContainer,
+.rContainer,
+.rLandingPage,
+.landingPageR {
+  display: flex;
+  justify-content: space-around;
+}
+
+.rNavLinks {
+  font-weight: 600;
+}
+
+.rNavLinks:hover {
+  line-height: 1em;
+  border-bottom: 3px solid black;
+}
+.rNBtnContainer {
+  width: 40%;
+  margin: 2em 0em;
+}
+
+.btnCommonDesign {
+  border-radius: 2em;
+  border: 2px solid var(--border-color);
+  color: black;
+  background-color: inherit;
+  padding: 0.5em 1em;
+}
+
+.rContainer {
+  flex-direction: row;
+  min-width: 100%;
+  margin-top: 5%;
+}
+.rSidePanels {
+  gap: 1em;
+  color: var(--border-color);
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+}
+
+.rLandingPage {
+  flex-direction: row;
+}
+.landingPageR {
+  flex-direction: column;
+  width: 45%;
+}
+.rMainHeading {
+  font-size: 300%;
+  text-align: left;
+  font-weight: 350;
+}
+
+.rBtnDiv {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.functionalBtn {
+  transform: scale(1.3);
+  border-radius: 0.5em;
+  color: black;
+}
+
+@keyframes hLine {
+  0% {
+    right: 100%;
+  }
+  100% {
+    right: 0%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.addedToCart {
+  position: fixed;
+  top: 10%;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.cartContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 1em;
+
+  position: absolute;
+  right: 0;
+
+  width: 40%;
+  margin: 1em;
+  padding: 1em;
+  z-index: 1;
+
+  border: var(--border-3);
+  background-color: #dcc7b2;
+  border-radius: var(--border-radius);
+}
+.itemList {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  max-height: 50vh;
+  overflow-y: scroll;
+}
+.cartIcon {
+  position: relative;
+}
+.cartItem,
+.cartItemDetails,
+.totalDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1em;
 }
 
-.App-link {
-  color: #61dafb;
+.cartItemDetails {
+  width: 50%;
+  justify-content: space-around;
+}
+.itemName,
+.cartItemPrice {
+  display: flex;
+  gap: 0.5em;
+  padding: 0.5em;
+  margin: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cartItemPrice {
+  padding-top: 1em;
+}
+
+.totalDiv {
+  border-top: var(--border-3);
+  padding: 1em;
+  font-size: 120%;
+}
+/* .totalDiv p::after {
+  content: "GST $8";
+  display: block;
+} */
+/* Our story section */
+
+.storySummaryContainer {
+  display: flex;
+  flex-direction: column;
+  height: min-content;
+  padding: 1.5em;
+}
+.storyContainer {
+  margin: 10% auto;
+}
+.storySummaryContainer {
+  border: var(--border-3);
+  border-radius: var(--border-radius);
+  font-size: 130%;
+}
+.imgSection {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+}
+#anim {
+  max-width: 20%;
+}
+.story {
+  margin: 0 1em;
+  text-align: justify;
+}
+
+/* Contact us */
+.contactContentContainer {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 0 auto;
+  padding: 3em 0 1em 0;
+
+  border: var(--border-3);
+  border-radius: var(--border-radius);
+}
+/* Short the code, replace/ */
+.mapSection {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+.formSection {
+  width: 50%;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.contactForm button {
+  width: 80%;
+  align-self: center;
+}
+
+#maps {
+  width: 100%;
+  height: 40vh;
+}
+#anim2 {
+  width: 50%;
+  align-self: flex-end;
+}
+
+footer {
+  text-align: center;
+  padding: 1em;
 }
