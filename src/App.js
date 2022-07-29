@@ -21,7 +21,7 @@ function App() {
         return [...state, item];
 
       case "REMOVE":
-        item = state[action.payload]; 
+        item = state[action.payload];
         if (state.length !== 1) {
           setTotalCartValue(totalCartValue - item.price);
           const cart = [...state];
